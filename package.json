@@ -10,12 +10,28 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./extension.js",
+  "main": "./src/index.js",
   "contributes": {
     "commands": [{
-      "command": "my-extension-project-rmv.helloWorld",
-      "title": "Hello World"
-    }]
+        "command": "my-extension-project-rmv.myExtensionProject",
+        "title": "My Extension Project"
+      },
+      {
+        "command": "my-extension-project-rmv.generateCRUD",
+        "title": "Generate CRUD"
+      }],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "my-extension-project-rmv.myExtensionProject",
+          "group": "navigation"
+        },
+        {
+          "command": "my-extension-project-rmv.generateCRUD",
+          "group": "navigation"
+        }
+        ]
+      }
   },
   "scripts": {
     "lint": "eslint .",
